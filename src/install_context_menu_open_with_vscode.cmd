@@ -26,5 +26,6 @@ reg.exe add "%hkey%\Software\Classes\Directory\shell\%action%" /v Icon /t REG_SZ
 
 
 :: Explorer Background right click
-reg.exe add "%hkey%\Software\Classes\Directory\Background\shell\%action%\command" /ve /t REG_EXPAND_SZ /d "\"%command%\"\"%%1\"" /f
+reg.exe add "%hkey%\Software\Classes\Directory\Background\shell\%action%\command" /ve /t REG_EXPAND_SZ /d "\"%command%\"\"%%V\"" /f
 reg.exe add "%hkey%\Software\Classes\Directory\Background\shell\%action%" /v Icon /t REG_SZ /d "%command%,0" /f
+reg.exe add "%hkey%\Software\Classes\Directory\Background\shell\%action%" /v NoWorkingDirectory /t REG_SZ /d "" /f
